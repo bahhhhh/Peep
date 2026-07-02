@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0000000000000000000000A1 /* PeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C2C3C4C5C6C7C8C9C0C1C2 /* PeepApp.swift */; };
+		0000000000000000000000A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2D3D4D5D6D7D8D9D0D1D2 /* ContentView.swift */; };
+		0000000000000000000000A3 /* ArchiveReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2E3E4E5E6E7E8E9E0E1E2 /* ArchiveReader.swift */; };
+		0000000000000000000000A4 /* FileEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2F3F4F5F6F7F8F9F0F1F2 /* FileEntry.swift */; };
+		0000000000000000000000A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B2C2D2E2F2A3B3C3D3E3F3 /* Assets.xcassets */; };
+		AA000000000000000000AA03 /* SWCompression in Frameworks */ = {isa = PBXBuildFile; productRef = AA000000000000000000AA02 /* SWCompression */; };
+		BB000000000000000000BB03 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = BB000000000000000000BB02 /* ZIPFoundation */; };
+		CC000000000000000000CC03 /* MimeParser in Frameworks */ = {isa = PBXBuildFile; productRef = CC000000000000000000CC02 /* MimeParser */; };
+		DD000000000000000000DD02 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DD000000000000000000DD01 /* AppIcon.icns */; };
+		FF200000000000000000FF01 /* ArchiveReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF100000000000000000FF01 /* ArchiveReaderTests.swift */; };
+		FF200000000000000000FF02 /* FileEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF100000000000000000FF02 /* FileEntryTests.swift */; };
+		FF200000000000000000FF03 /* TestFixtureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF100000000000000000FF03 /* TestFixtureBuilder.swift */; };
+		FF200000000000000000FF04 /* SWCompression in Frameworks (Tests) */ = {isa = PBXBuildFile; productRef = FF300000000000000000FF01 /* SWCompression */; };
+		FF200000000000000000FF05 /* ZIPFoundation in Frameworks (Tests) */ = {isa = PBXBuildFile; productRef = FF300000000000000000FF02 /* ZIPFoundation */; };
+		FF200000000000000000FF06 /* MimeParser in Frameworks (Tests) */ = {isa = PBXBuildFile; productRef = FF300000000000000000FF03 /* MimeParser */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF600000000000000000FF02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 856A2C4E2A4B5D6E7F8A9B0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D4E5F6A7B8C9D0E1F2;
+			remoteInfo = Peep;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A2B2C2D2E2F2A3B3C3D3E3F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1B2B3B4B5B6B7B8B9B0B1B2 /* Peep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C2C3C4C5C6C7C8C9C0C1C2 /* PeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepApp.swift; sourceTree = "<group>"; };
+		D1D2D3D4D5D6D7D8D9D0D1D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD000000000000000000DD01 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		E1E2E3E4E5E6E7E8E9E0E1E2 /* ArchiveReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveReader.swift; sourceTree = "<group>"; };
+		F1F2F3F4F5F6F7F8F9F0F1F2 /* FileEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntry.swift; sourceTree = "<group>"; };
+		F3F4F5F6F7F8F9F0F1F2F3F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF100000000000000000FF01 /* ArchiveReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveReaderTests.swift; sourceTree = "<group>"; };
+		FF100000000000000000FF02 /* FileEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntryTests.swift; sourceTree = "<group>"; };
+		FF100000000000000000FF03 /* TestFixtureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtureBuilder.swift; sourceTree = "<group>"; };
+		FF400000000000000000FF02 /* PeepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0000000000000000000000B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000000000000000000AA03 /* SWCompression in Frameworks */,
+				BB000000000000000000BB03 /* ZIPFoundation in Frameworks */,
+				CC000000000000000000CC03 /* MimeParser in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF500000000000000000FF02 /* Frameworks (Tests) */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF200000000000000000FF04 /* SWCompression in Frameworks (Tests) */,
+				FF200000000000000000FF05 /* ZIPFoundation in Frameworks (Tests) */,
+				FF200000000000000000FF06 /* MimeParser in Frameworks (Tests) */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0000000000000000000000C1 = {
+			isa = PBXGroup;
+			children = (
+				0000000000000000000000C3 /* Peep */,
+				FF800000000000000000FF01 /* PeepTests */,
+				0000000000000000000000C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0000000000000000000000C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1B2B3B4B5B6B7B8B9B0B1B2 /* Peep.app */,
+				FF400000000000000000FF02 /* PeepTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0000000000000000000000C3 /* Peep */ = {
+			isa = PBXGroup;
+			children = (
+				C1C2C3C4C5C6C7C8C9C0C1C2 /* PeepApp.swift */,
+				D1D2D3D4D5D6D7D8D9D0D1D2 /* ContentView.swift */,
+				E1E2E3E4E5E6E7E8E9E0E1E2 /* ArchiveReader.swift */,
+				F1F2F3F4F5F6F7F8F9F0F1F2 /* FileEntry.swift */,
+				A2B2C2D2E2F2A3B3C3D3E3F3 /* Assets.xcassets */,
+				DD000000000000000000DD01 /* AppIcon.icns */,
+				F3F4F5F6F7F8F9F0F1F2F3F4 /* Info.plist */,
+			);
+			path = Peep;
+			sourceTree = "<group>";
+		};
+		FF800000000000000000FF01 /* PeepTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF100000000000000000FF01 /* ArchiveReaderTests.swift */,
+				FF100000000000000000FF02 /* FileEntryTests.swift */,
+				FF100000000000000000FF03 /* TestFixtureBuilder.swift */,
+			);
+			path = PeepTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* Peep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0000000000000000000000E1 /* Build configuration list for PBXNativeTarget "Peep" */;
+			buildPhases = (
+				0000000000000000000000B1 /* Sources */,
+				0000000000000000000000B2 /* Resources */,
+				0000000000000000000000B3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Peep;
+			packageProductDependencies = (
+				AA000000000000000000AA02 /* SWCompression */,
+				BB000000000000000000BB02 /* ZIPFoundation */,
+				CC000000000000000000CC02 /* MimeParser */,
+			);
+			productName = Peep;
+			productReference = B1B2B3B4B5B6B7B8B9B0B1B2 /* Peep.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF400000000000000000FF01 /* PeepTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF700000000000000000FF03 /* Build configuration list for PBXNativeTarget "PeepTests" */;
+			buildPhases = (
+				FF500000000000000000FF01 /* Sources */,
+				FF500000000000000000FF02 /* Frameworks (Tests) */,
+				FF500000000000000000FF03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF600000000000000000FF01 /* PBXTargetDependency */,
+			);
+			name = PeepTests;
+			packageProductDependencies = (
+				FF300000000000000000FF01 /* SWCompression */,
+				FF300000000000000000FF02 /* ZIPFoundation */,
+				FF300000000000000000FF03 /* MimeParser */,
+			);
+			productName = PeepTests;
+			productReference = FF400000000000000000FF02 /* PeepTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		856A2C4E2A4B5D6E7F8A9B0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					A1B2C3D4E5F6A7B8C9D0E1F2 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FF400000000000000000FF01 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A1B2C3D4E5F6A7B8C9D0E1F2;
+					};
+				};
+			};
+			buildConfigurationList = 0000000000000000000000E2 /* Build configuration list for PBXProject "Peep" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0000000000000000000000C1;
+			packageReferences = (
+				AA000000000000000000AA01 /* XCRemoteSwiftPackageReference "SWCompression" */,
+				BB000000000000000000BB01 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				CC000000000000000000CC01 /* XCRemoteSwiftPackageReference "MimeParser" */,
+			);
+			productRefGroup = 0000000000000000000000C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* Peep */,
+				FF400000000000000000FF01 /* PeepTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0000000000000000000000B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000000000000000000A5 /* Assets.xcassets in Resources */,
+				DD000000000000000000DD02 /* AppIcon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF500000000000000000FF03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0000000000000000000000B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000000000000000000A1 /* PeepApp.swift in Sources */,
+				0000000000000000000000A2 /* ContentView.swift in Sources */,
+				0000000000000000000000A3 /* ArchiveReader.swift in Sources */,
+				0000000000000000000000A4 /* FileEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF500000000000000000FF01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF200000000000000000FF01 /* ArchiveReaderTests.swift in Sources */,
+				FF200000000000000000FF02 /* FileEntryTests.swift in Sources */,
+				FF200000000000000000FF03 /* TestFixtureBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF600000000000000000FF01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D4E5F6A7B8C9D0E1F2 /* Peep */;
+			targetProxy = FF600000000000000000FF02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0000000000000000000000D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Peep/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Peep;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peep.Peep;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0000000000000000000000D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Peep/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Peep;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peep.Peep;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		0000000000000000000000D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_CYCLE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0000000000000000000000D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_CYCLE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FF700000000000000000FF01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PeepTests;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peep.PeepTests;
+				PRODUCT_NAME = PeepTests;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peep.app/Contents/MacOS/Peep";
+			};
+			name = Debug;
+		};
+		FF700000000000000000FF02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PeepTests;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peep.PeepTests;
+				PRODUCT_NAME = PeepTests;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peep.app/Contents/MacOS/Peep";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0000000000000000000000E1 /* Build configuration list for PBXNativeTarget "Peep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0000000000000000000000D1 /* Debug */,
+				0000000000000000000000D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0000000000000000000000E2 /* Build configuration list for PBXProject "Peep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0000000000000000000000D3 /* Debug */,
+				0000000000000000000000D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF700000000000000000FF03 /* Build configuration list for PBXNativeTarget "PeepTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF700000000000000000FF01 /* Debug */,
+				FF700000000000000000FF02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA000000000000000000AA01 /* XCRemoteSwiftPackageReference "SWCompression" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tsolomko/SWCompression";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.8.0;
+			};
+		};
+		BB000000000000000000BB01 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		CC000000000000000000CC01 /* XCRemoteSwiftPackageReference "MimeParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/miximka/MimeParser";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA000000000000000000AA02 /* SWCompression */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA000000000000000000AA01 /* XCRemoteSwiftPackageReference "SWCompression" */;
+			productName = SWCompression;
+		};
+		BB000000000000000000BB02 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB000000000000000000BB01 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+		CC000000000000000000CC02 /* MimeParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC000000000000000000CC01 /* XCRemoteSwiftPackageReference "MimeParser" */;
+			productName = MimeParser;
+		};
+		FF300000000000000000FF01 /* SWCompression */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA000000000000000000AA01 /* XCRemoteSwiftPackageReference "SWCompression" */;
+			productName = SWCompression;
+		};
+		FF300000000000000000FF02 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB000000000000000000BB01 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+		FF300000000000000000FF03 /* MimeParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC000000000000000000CC01 /* XCRemoteSwiftPackageReference "MimeParser" */;
+			productName = MimeParser;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 856A2C4E2A4B5D6E7F8A9B0C /* Project object */;
+}
