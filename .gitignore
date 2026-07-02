@@ -3,6 +3,7 @@
 
 # Xcode build products / local build folder
 build/
+dist/
 DerivedData/
 *.xcuserstate
 xcuserdata/
