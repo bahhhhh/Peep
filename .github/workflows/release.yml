@@ -11,10 +11,14 @@ permissions:
 jobs:
   build-and-release:
     name: Build .pkg and publish GitHub Release
-    # Matches the architecture already built and tested locally (Apple Silicon;
-    # the app is arm64-only). The Build-and-Analyze workflow doesn't care about
-    # architecture since it never ships its output, but this one does.
-    runs-on: macos-26-xlarge
+    # Plain "macos-26" (not "-large"/"-xlarge") — those suffixes are GitHub's
+    # "larger runners" tier, which is always billed (even on public repos) and
+    # requires at least a Team plan. This standard runner is free on public repos,
+    # same as the Build-and-Analyze workflow. Compiling doesn't require running on
+    # the target architecture (only executing the app would), so building here
+    # still produces the same arm64-only Peep.app the SDK/project settings dictate
+    # regardless of the runner's own architecture — see the verification step below.
+    runs-on: macos-26
 
     steps:
       - uses: actions/checkout@v7
@@ -36,6 +40,9 @@ jobs:
             MARKETING_VERSION="$VERSION" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO
+
+      - name: Verify built binary architecture
+        run: lipo -info "build/Build/Products/Release/Peep.app/Contents/MacOS/Peep"
 
       - name: Build installer package
         run: |
