@@ -68,4 +68,5 @@ jobs:
           NOTES
           gh release create "$GITHUB_REF_NAME" "dist/Peep-${VERSION}.pkg" \
             --title "Peep $VERSION" \
-            --notes-file release_notes.md
+            --notes-file release_notes.md \
+            --generate-notes
