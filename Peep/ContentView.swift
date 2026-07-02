@@ -3,6 +3,18 @@ import QuickLook
 import QuickLookUI
 import UniformTypeIdentifiers
 
+// A genuinely dynamic color (not a fixed Color value) so it re-resolves against
+// whichever appearance is actually in effect — including Peep's own Light/Dark/System
+// override in Settings (NSApp.appearance), not just the system-wide setting.
+private let brandBlue = Color(NSColor(name: nil) { appearance in
+    switch appearance.bestMatch(from: [.aqua, .darkAqua]) {
+    case .some(.darkAqua):
+        return NSColor(red: 0xF1 / 255.0, green: 0xF1 / 255.0, blue: 0xE6 / 255.0, alpha: 1.0)
+    default:
+        return NSColor(red: 0x0F / 255.0, green: 0x4C / 255.0, blue: 0x81 / 255.0, alpha: 1.0)
+    }
+})
+
 final class QuickLookCoordinator: NSObject, ObservableObject, QLPreviewPanelDataSource {
     var url: URL?
     func numberOfPreviewItems(in panel: QLPreviewPanel!) -> Int { url == nil ? 0 : 1 }
@@ -320,7 +332,7 @@ struct ContentView: View {
         HStack(spacing: 10) {
             Image(systemName: "archivebox.fill")
                 .font(.title2)
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(brandBlue)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(info.fileName)
@@ -440,7 +452,7 @@ struct ContentView: View {
                 Spacer().frame(width: 12)
             }
             Image(systemName: row.node.isDirectory ? "folder.fill" : icon(for: row.node.name))
-                .foregroundStyle(row.node.isDirectory ? Color.yellow : Color.secondary)
+                .foregroundStyle(row.node.isDirectory ? brandBlue : Color.secondary)
                 .frame(width: 16)
             Text(row.node.name)
                 .lineLimit(1)
