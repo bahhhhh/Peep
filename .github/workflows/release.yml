@@ -22,6 +22,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0   # full history + tags, needed to diff against the previous release tag
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -53,20 +55,36 @@ jobs:
             --version "$VERSION" \
             "dist/Peep-${VERSION}.pkg"
 
+      - name: Build release notes
+        run: |
+          # Not GitHub's own --generate-notes: that summarizes merged PRs, and this
+          # repo commits straight to main, so it only ever produced a bare compare
+          # link with no itemized content. This builds a real bullet list instead.
+          PREV_TAG=$(git tag --sort=-v:refname | grep -v "^${GITHUB_REF_NAME}$" | head -1)
+          {
+            echo "Not code-signed or notarized. On first launch, right-click the \`.pkg\`"
+            echo "(or the installed app) and choose **Open**, or approve it in"
+            echo "**System Settings → Privacy & Security**, since Gatekeeper will"
+            echo "otherwise refuse to open it."
+            echo ""
+            echo "See the [README](https://github.com/${{ github.repository }}#readme)"
+            echo "for the full feature list and installation details."
+            echo ""
+            if [ -n "$PREV_TAG" ]; then
+              echo "## Changes since $PREV_TAG"
+              echo ""
+              git log "$PREV_TAG"..HEAD --pretty=format:"- %s"
+            else
+              echo "## Changes"
+              echo ""
+              echo "Initial release."
+            fi
+          } > release_notes.md
+
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cat > release_notes.md <<'NOTES'
-          Not code-signed or notarized. On first launch, right-click the `.pkg`
-          (or the installed app) and choose **Open**, or approve it in
-          **System Settings → Privacy & Security**, since Gatekeeper will
-          otherwise refuse to open it.
-
-          See the [README](https://github.com/${{ github.repository }}#readme)
-          for the full feature list and installation details.
-          NOTES
           gh release create "$GITHUB_REF_NAME" "dist/Peep-${VERSION}.pkg" \
             --title "Peep $VERSION" \
-            --notes-file release_notes.md \
-            --generate-notes
+            --notes-file release_notes.md
