@@ -50,7 +50,7 @@ If you'd rather avoid the Gatekeeper prompt entirely, build from source instead 
 Requires the full **Xcode app** (not just the command-line tools) — `xcodebuild` needs it, and running tests requires the Xcode GUI (see [Development](#development) below).
 
 ```sh
-git clone <this-repo-url>
+git clone https://github.com/bahhhhh/Peep.git
 cd Peep
 open Peep.xcodeproj
 ```
