@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write   # gh release create needs write access to the repo
+
+jobs:
+  build-and-release:
+    name: Build .pkg and publish GitHub Release
+    # Matches the architecture already built and tested locally (Apple Silicon;
+    # the app is arm64-only). The Build-and-Analyze workflow doesn't care about
+    # architecture since it never ships its output, but this one does.
+    runs-on: macos-26-xlarge
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Derive version number from tag
+        run: |
+          echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
+      - name: Build Release configuration
+        run: |
+          xcodebuild clean build \
+            -project Peep.xcodeproj \
+            -scheme Peep \
+            -configuration Release \
+            -derivedDataPath build \
+            MARKETING_VERSION="$VERSION" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build installer package
+        run: |
+          mkdir -p dist
+          pkgbuild --component "build/Build/Products/Release/Peep.app" \
+            --install-location /Applications \
+            --identifier com.peep.Peep \
+            --version "$VERSION" \
+            "dist/Peep-${VERSION}.pkg"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > release_notes.md <<'NOTES'
+          Not code-signed or notarized. On first launch, right-click the `.pkg`
+          (or the installed app) and choose **Open**, or approve it in
+          **System Settings → Privacy & Security**, since Gatekeeper will
+          otherwise refuse to open it.
+
+          See the [README](https://github.com/${{ github.repository }}#readme)
+          for the full feature list and installation details.
+          NOTES
+          gh release create "$GITHUB_REF_NAME" "dist/Peep-${VERSION}.pkg" \
+            --title "Peep $VERSION" \
+            --notes-file release_notes.md
