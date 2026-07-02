@@ -1,0 +1,35 @@
+name: Xcode - Build and Analyze
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-analyze:
+    name: Build and analyze (xcodebuild)
+    # Peep targets macOS 26 (MACOSX_DEPLOYMENT_TARGET = 26.0), which needs an Xcode
+    # version bundling the macOS 26 SDK. macos-latest/macos-15 only have Xcode 16.x
+    # (macOS 15 SDK), so this must stay pinned to macos-26 (default Xcode there is
+    # 26.5, SDK 26.5 — comfortably covers the 26.0 deployment target).
+    runs-on: macos-26
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      # No separate "resolve packages" step: `xcodebuild build` resolves the three
+      # Swift Package dependencies (ZIPFoundation, SWCompression, MimeParser) itself.
+      # No explicit destination/configuration override beyond Debug: this exact
+      # invocation shape is the one already verified to work for this project.
+      - name: Build and analyze
+        run: |
+          xcodebuild clean build analyze \
+            -project Peep.xcodeproj \
+            -scheme Peep \
+            -configuration Debug \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
