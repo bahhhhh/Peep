@@ -233,7 +233,6 @@ Settings scene (macOS `Settings { }`) with three tabs, window size 460×300:
 
 ## Known issues
 
-- Detailed `[Peep]` logging is present in `ContentView.swift` — remove before shipping
 - After first install, Finder may need a relaunch or `lsregister -f Peep.app` before "Open With" appears
 - **`actool` produces no compiled output in this sandboxed CLI environment** — verified even for a minimal catalog containing only `AccentColor`; `actool --compile ...` and the full `xcodebuild` pipeline both exit 0 but emit no `.car`/no compiled assets at all. Because of this, the app icon is delivered as a loose `Peep/AppIcon.icns` file via `CFBundleIconFile`/a plain Resources-copy build step (not `ASSETCATALOG_COMPILER_APPICON_NAME`) — that path doesn't depend on `actool` and is verified working. A modern Icon Composer `.icon` bundle (macOS 26 adaptive/Liquid Glass icon) was tried first via the asset catalog but hit this same `actool` limitation; it may well work fine from the real Xcode GUI (which runs a full IDE build session), so it's worth re-trying there if the adaptive icon rendering is wanted — this repo just can't verify it from the CLI
 - SWCompression (TAR, 7z) loads the entire archive into memory; very large tar/7z archives may cause high memory usage
